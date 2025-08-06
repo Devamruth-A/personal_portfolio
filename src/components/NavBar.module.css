@@ -1,4 +1,7 @@
+/* --- Base / Desktop Styles --- */
+
 .navbar {
+  /* Your styles for the navbar */
   background-color: rgba(26, 32, 44, 0.8);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -8,28 +11,121 @@
   z-index: 100;
   height: 4.5rem;
 }
+
 .navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  /* Added padding for spacing from screen edges */
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent-primary);
+  /* Assumes --accent-primary is defined, e.g., in your global CSS */
+  color: var(--accent-primary, #63b3ed); 
   text-decoration: none;
+  /* Keep logo on top of the mobile menu overlay */
+  z-index: 101;
 }
+
 .navLinks {
+  /* These are the styles for the desktop link container */
   display: flex;
   gap: 1.5rem;
 }
+
 .navLinkItem {
-  color: var(--text-light);
+  /* Assumes --text-light is defined */
+  color: var(--text-light, #e2e8f0); 
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
+
 .navLinkItem:hover {
-  color: var(--accent-primary);
+  /* Assumes --accent-primary is defined */
+  color: var(--accent-primary, #63b3ed);
+}
+
+/* Hide the mobile-only burger icon on desktop */
+.menuIcon {
+  display: none;
+}
+
+
+/* --- Responsive / Mobile Styles using @media query --- */
+@media screen and (max-width: 768px) {
+  
+  /* Show the burger icon on mobile */
+  .menuIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    /* Keep icon on top of the mobile menu overlay */
+    z-index: 101;
+  }
+
+  .bar {
+    width: 100%;
+    height: 3px;
+    /* Use a light color for the bars */
+    background-color: var(--text-light, white);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Animation for burger icon transforming to an 'X' */
+  .bar1Open {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .bar2Open {
+    opacity: 0;
+  }
+  .bar3Open {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Redefine .navLinks to be the mobile menu overlay */
+  .navLinks {
+    /* Positioning to cover the whole screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(26, 32, 44, 0.95); /* Slightly less transparent for readability */
+    backdrop-filter: blur(10px);
+    
+    /* Layout for vertical, centered links */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+    /* Hide by default using a transform */
+    transform-origin: top right;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  /* This .active class (toggled by React) makes the menu visible */
+  .navLinks.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* Make links larger and more touch-friendly on mobile */
+  .navLinkItem {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
 }

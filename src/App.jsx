@@ -12,7 +12,7 @@ import ContactSection from './components/ContactSection.jsx';
 import Footer from './components/Footer.jsx';
 
 // Import your assets
-import profilePic from './assets/images/profile.jpeg';
+import profilePic from './assets/images/profile.png';
 import project1Pic from './assets/images/project1.png';
 import project2Pic from './assets/images/project2.png';
 
@@ -58,9 +58,9 @@ function App() {
     },
     about: {
       image: profilePic,
-      description: "I'm a passionate developer based in Pullur, Kerala, with a love for creating beautiful, animated, and functional web applications. My journey in tech is driven by curiosity and a desire to solve real-world problems with elegant code."
+      description: "I'm a passionate developer based in Kanhangad, Kerala, with a love for creating beautiful, animated, and functional web applications. My journey in tech is driven by curiosity and a desire to solve real-world problems with elegant code."
     },
-    skills: ['React', 'JavaScript', 'Node.js', 'Framer Motion', 'CSS3', 'HTML5', 'Vite', 'MongoDB'],
+    skills: ['React', 'JavaScript', 'Node.js', 'postgreSQL', 'python', 'Figma', 'Vite', 'MongoDB'],
     projects: [
       {
         title: 'Project One',
