@@ -1,0 +1,8 @@
+.about { padding: 5rem 0; background-color: var(--bg-secondary); }
+.contentWrapper { display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; }
+.profileImage { width: 12rem; height: 12rem; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-primary); }
+.description { max-width: 600px; line-height: 1.8; color: var(--text-muted); }
+
+@media (min-width: 768px) {
+  .contentWrapper { flex-direction: row; gap: 4rem; text-align: left; }
+}

@@ -1,0 +1,4 @@
+.skills { padding: 5rem 0; }
+.grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.skillCard { background-color: var(--bg-secondary); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 500; transition: transform 0.3s ease, background-color 0.3s ease; }
+.skillCard:hover { transform: translateY(-5px); background-color: var(--accent-primary); color: var(--text-dark); }

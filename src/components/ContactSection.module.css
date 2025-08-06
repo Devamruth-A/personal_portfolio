@@ -1,0 +1,8 @@
+.contact { padding: 5rem 0; text-align: center; }
+.contactText { max-width: 600px; margin: 0 auto 2rem auto; color: var(--text-muted); line-height: 1.8; }
+.emailButton { display: inline-block; background-color: var(--accent-primary); color: var(--text-dark); padding: 1rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background-color 0.3s ease, transform 0.3s ease; }
+.emailButton:hover { background-color: var(--accent-secondary); transform: translateY(-3px); }
+.socialsContainer { margin-top: 4rem; border-top: 1px solid var(--bg-secondary); padding-top: 3rem; }
+.socialLinks { display: flex; justify-content: center; gap: 2.5rem; }
+.socialLink { color: var(--text-muted); font-size: 2rem; transition: color 0.3s ease, transform 0.3s ease; }
+.socialLink:hover { color: var(--accent-primary); transform: translateY(-3px); }
